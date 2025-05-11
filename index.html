@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora de nota</title>
+</head>
+<body>
+	<h1>Calcule a nota de Cálculo 1</h1>
+	<img height=240px src="https://upload.wikimedia.org/wikipedia/commons/a/af/Abacus_6.png" alt="Ábaco">
+	<div>
+		Nota da prova 1: <input type="text" class="p1">
+		Nota da prova 2: <input type="text" class="p2">
+		Nota da prova 3: <input type="text" class="p3">
+		Nota média dos testes: <input type="text" class="testes">
+	</div>
+	<button type="button" onclick="calcularNota()"> Calcular </button>
+</body>
+</html>
+
+<style>
+	button {
+		background-color: #898C00;
+	}
+	body {
+		background-color: slategray;
+		text-align: center;
+	}
+</style>
+
+<script>
+	function calcularNota() {
+		var nota_p1 = document.querySelector(".p1").value
+		var nota_p2 = document.querySelector(".p2").value
+		var nota_p3 = document.querySelector(".p3").value
+		var nota_testes = document.querySelector(".testes").value
+
+		var media_provas = (2*nota_p1 + 3*nota_p2 + 3*nota_p3)/8
+		var resultado = media_provas*0.8 + nota_testes*0.2
+
+		if(resultado>=5)
+			alert("Você foi aprovado em Cálculo 1 com nota igual a "+resultado)
+		else
+			alert("Você foi reprovado em Cálculo 1 com nota igual a "+resultado)
+	}
+</script>
